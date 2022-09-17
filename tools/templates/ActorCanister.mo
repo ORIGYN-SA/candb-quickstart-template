@@ -6,7 +6,7 @@ shared ({ caller = owner }) actor class {{actor_class_name}}({
   partitionKey: Text;
   // the scaling options that determine when to auto-scale out this canister storage partition
   scalingOptions: CanDB.ScalingOptions;
-  // (optional) allows the developer to specify additional owners (i.e. for allowing admin or backfill access to specific endpoints)
+  // (optional) allows the developer to specify owners in addition to this canister's controllers (i.e. for allowing admin or dev team access to specific API endpoints)
   owners: ?[Principal];
 }) {
   /// @required (may wrap, but must be present in some form in the canister)

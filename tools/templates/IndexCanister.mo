@@ -1,5 +1,6 @@
 import Error "mo:base/Error";
 import Text "mo:base/Text";
+import Utils "mo:candb/Utils";
 import CanisterMap "mo:candb/CanisterMap";
 import Buffer "mo:stable-buffer/StableBuffer";
 
@@ -29,21 +30,15 @@ shared ({caller = owner}) actor class {{name}}() = this {
     }
   };
 
-  /// @modify and @required (Do not delete or change the API, but must change/modify the function logic for your given application actor and data model)
-  ///
-  /// This is method is called by CanDB for AutoScaling. It is up to the developer to specify which
-  /// PK prefixes should spin up which canister actor.
-  ///
-  /// If the developer does not utilize this method, auto-scaling will NOT work
-  public shared({caller = caller}) func createAdditionalCanisterForPK(pk: Text): async Text {
-    if (Text.startsWith(pk, #text("<your_pk_prefix>"))) {
-      // await create<YourActorType>Canister(pk, ...your args);
-      "to fill in";
-    } else if (Text.startsWith(pk, #text("<different_pk_prefix>"))) {
-      // await create<DifferentActorType>Canister(pk, ...your args);
-      "to fill in";
+  /*
+   * Use as a template for your Service Actor autoScaling hooks
+
+  public shared({caller = caller}) func autoScale<ServiceActorName>Canister(pk: Text): async Text {
+    if (Utils.callingCanisterOwnsPK(caller, pkToCanisterMap, pk)) {
+      await create<ActorService>Canister(pk, ?[owner, Principal.fromActor(this)]);
     } else {
-      throw Error.reject("creation of additional canister case not covered");
+      Debug.trap("error, called by non-controller=" # debug_show(caller));
     };
-  }
+  };
+
 }
