@@ -4,10 +4,10 @@ const { generateTemplateFiles, CaseConverterEnum } = require('generate-template-
 
 generateTemplateFiles([
   {
-    option: 'Create CanDB Actor Canister From Template',
+    option: 'Create CanDB Service Actor From Template',
     defaultCase: CaseConverterEnum.PascalCase,
     entry: {
-      folderPath: './tools/templates/ActorCanister.mo',
+      folderPath: './tools/templates/ServiceActor.mo',
     },
     stringReplacers: ['{{actor_class_name}}' ],
     output: {

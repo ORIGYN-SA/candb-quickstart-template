@@ -1,10 +1,10 @@
 {
   "name": "candb-actor-template",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generate-actor": "node tools/generate.js",
+    "generate-actor": "node tools/generate_actor.js",
     "generate-declarations": "dfx generate && ./comment_last_line.sh"
   },
   "author": "",

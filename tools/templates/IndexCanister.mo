@@ -30,9 +30,8 @@ shared ({caller = owner}) actor class {{name}}() = this {
     }
   };
 
+  // Use as a template for your Service Actor autoScaling hooks
   /*
-   * Use as a template for your Service Actor autoScaling hooks
-
   public shared({caller = caller}) func autoScale<ServiceActorName>Canister(pk: Text): async Text {
     if (Utils.callingCanisterOwnsPK(caller, pkToCanisterMap, pk)) {
       await create<ActorService>Canister(pk, ?[owner, Principal.fromActor(this)]);
@@ -40,5 +39,6 @@ shared ({caller = owner}) actor class {{name}}() = this {
       Debug.trap("error, called by non-controller=" # debug_show(caller));
     };
   };
+  */
 
 }
