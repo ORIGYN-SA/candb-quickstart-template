@@ -1,3 +1,5 @@
+![Horizontal_logo](https://user-images.githubusercontent.com/17368530/196894029-c2e9fefa-8ffb-47cb-8fb6-4dbb351c0529.png)
+
 # candb-quickstart-template
 Getting up and running with a multi-canister CanDB Backend project
 
