@@ -13,6 +13,7 @@ shared ({ caller = owner }) actor class {{actor_class_name}}({
   stable let db = CanDB.init({
     pk = partitionKey;
     scalingOptions = scalingOptions;
+    btreeOrder = null;
   });
 
   /// @recommended (not required) public API
